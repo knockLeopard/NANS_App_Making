@@ -20,11 +20,12 @@ import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
+import android.widget.ImageView;
 import android.widget.Toast;
-
+import com.example.user.practice2.SubActivity2;
 import com.example.user.R;
-
 import java.util.List;
 
 /**
@@ -43,14 +44,6 @@ public class SubActivity1 extends Activity {
         super.onCreate(savedInstanceState);
         subActivity1 = this;
         setContentView(R.layout.activity_sub);
-        ActivityManager am = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
-
-        int i = subActivity1.getTaskId();
-        DisplayManager mDisplayManager = (DisplayManager)getSystemService(Context.DISPLAY_SERVICE);
-        // enumerate the displays
-        Display[] presentationDisplays = mDisplayManager.getDisplays(DisplayManager.DISPLAY_CATEGORY_PRESENTATION);
-
-
 
     }
 
@@ -66,6 +59,15 @@ public class SubActivity1 extends Activity {
         Display[] presentationDisplays = mDisplayManager.getDisplays(DisplayManager.DISPLAY_CATEGORY_PRESENTATION);
         am.setExternalDisplay(i, presentationDisplays[1], am.SET_EXTERNAL_DISPLAY_AND_STAY);
         moveTaskToBack(true);
+
+    }
+
+    public void startRotatingImage(View view) {
+        ((SubActivity2)SubActivity2.mContext).startRotatingImage(view);
+    }
+
+    public void startRotatingImageCounterClock(View view) {
+        ((SubActivity2)SubActivity2.mContext).startRotatingImageCounterClock(view);
 
     }
 

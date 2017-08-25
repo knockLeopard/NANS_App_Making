@@ -24,9 +24,7 @@ import android.view.animation.Transformation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.example.user.R;
-
 import java.util.List;
 
 /**
@@ -39,43 +37,19 @@ public class SubActivity2 extends Activity {
     public static SubActivity2 getInstance(){
         return   subActivity2;
     }
+    public static Context mContext;
 
-    ImageView rotateImage;
+    public static ImageView rotateImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         subActivity2 = this;
-
-
-        //moveTaskToBack(true);
-
-
+        mContext = this;
         setContentView(R.layout.activity_sub2);
 
 
-
-
-
-//        ActivityManager am = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
-//        List<ActivityManager.RunningTaskInfo> Info = am.getRunningTasks(1);
- //       ComponentName topActivity = Info.get(0).topActivity;
-  //      String name = topActivity.getPackageName();
-
-  //      int i = subActivity2.getTaskId();
-   //     DisplayManager mDisplayManager = (DisplayManager)getSystemService(Context.DISPLAY_SERVICE);
-        // enumerate the displays
-   //     Display[] presentationDisplays = mDisplayManager.getDisplays(DisplayManager.DISPLAY_CATEGORY_PRESENTATION);
-    //    ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-     //   am.setExternalDisplay(i, presentationDisplays[1], am.SET_EXTERNAL_DISPLAY_AND_GO_HOME);
-
-
-
-
-
     }
-
-
 
     public void startRotatingImage(View view) {
         rotateImage = (ImageView) findViewById(R.id.rotate_image);
@@ -83,6 +57,11 @@ public class SubActivity2 extends Activity {
         rotateImage.startAnimation(startRotateAnimation);
     }
 
+    public void startRotatingImageCounterClock(View view) {
+        rotateImage = (ImageView) findViewById(R.id.rotate_image);
+        Animation startRotateAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.android_rotate_animation_counter_clock);
+        rotateImage.startAnimation(startRotateAnimation);
+    }
 
     public void onClick(View view){
         Intent intent = getIntent();

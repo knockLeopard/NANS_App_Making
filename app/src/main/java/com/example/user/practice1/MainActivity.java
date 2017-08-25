@@ -52,13 +52,6 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                //        Toast.makeText(getApplicationContext(),"Hellow Android!!", Toast.LENGTH_LONG).show();
-                //      intent.setClassName("com.example.user.practice1", "com.example.user.practice2.SubActivity2");
-           //     ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-            //    List<ActivityManager.RunningTaskInfo> Info = am.getRunningTasks(1);
-            //    ComponentName topActivity = Info.get(0).topActivity;
-            //    String name = topActivity.getPackageName();
-
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -83,12 +76,6 @@ public class MainActivity extends Activity {
                     }
                 });
 
-
-
-
-
-
-
             }
         });
 
@@ -100,14 +87,10 @@ public class MainActivity extends Activity {
                 SubActivity2.getInstance().finish();
                 System.gc();
 
-
             }
         });
     }
 }
-
-
-
 
 class MyView extends View{
     public MyView(Context context){
@@ -117,12 +100,6 @@ class MyView extends View{
 
     // Display class의 method 사용 전체 코드
     protected void onDraw(Canvas canvas) {
-
-
-
-
-
-
         Paint p = new Paint();
         p.setTextSize(20);
         p.setColor(Color.BLACK);
@@ -162,9 +139,5 @@ class MyView extends View{
 
         canvas.drawText("getDisplayId() :"+String.valueOf(display.getDisplayId()), 0, 380, p);
 
-
-
     }
-
-
 }

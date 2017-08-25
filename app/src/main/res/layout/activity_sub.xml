@@ -16,4 +16,23 @@
         android:textSize = "30sp"
         android:onClick="onClick"/>
 
+    <Button
+        android:id="@+id/start_rotating_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="6dp"
+        android:onClick="startRotatingImage"
+        android:text="Start Rotating of Quit2" />
+
+    <Button
+        android:id="@+id/start_rotating_button_counter_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="6dp"
+        android:onClick="startRotatingImageCounterClock"
+        android:text="Start Rotating Counter Clock of Quit2" />
+
+
 </LinearLayout>
